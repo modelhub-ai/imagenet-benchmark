@@ -1,0 +1,24 @@
+# Use an official ubuntu runtime as a parent image
+FROM ubuntu:18.04
+
+# Install dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python-pip \
+    python-dev \
+    build-essential \
+    libffi-dev
+
+# Make port 8888 available outside container
+EXPOSE 8888
+
+# Install some python packages
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel
+RUN pip install --no-cache-dir future hypothesis numpy protobuf six
+RUN pip install jupyter==1.0.0 \
+    pandas==0.24.1 \
+    beautifulsoup4==4.6.3 \
+    requests==2.21.0 \
+    plotly==3.0.0 \
+    pycountry-convert==0.7.2 \
+    colorlover==0.2.1 \
+    psutil

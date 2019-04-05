@@ -1,0 +1,5 @@
+*.pyc
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+ILSVRC2012_devkit_t12
+ILSVRC2012_img_val
